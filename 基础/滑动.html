@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.container .box {
+			margin-top: 20px;
+			width: 200px;
+			height: 200px;
+			position: relative;
+		}
+
+		.container .box .inner {
+			position: absolute;
+			width: 200px;
+			height: 200px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 2px solid black;
+		}
+
+		.ease-in-out {
+
+			animation: identifier 4s ease-in-out 1s 2 alternate;
+		}
+
+		.linear {
+
+			animation: identifier 4s linear 1s 4 reverse;
+		}
+
+		.ease {
+
+			animation: identifier 4s ease 1s 2 alternate;
+		}
+
+		@keyframes identifier {
+			0% {
+				left: 0px
+			}
+
+			100% {
+				left: 500px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="box">
+			<div class="inner ease-in-out"> 4s ease-in-out 1s 2 alternate</div>
+		</div>
+		<div class="box">
+			<div class="inner linear"> 4s linear 1s 4 reverse</div>
+		</div>
+		<div class="box">
+			<div class="inner ease"> 4s ease 1s 2 alternate</div>
+		</div>
+	</div>
+</body>
+
+</html>

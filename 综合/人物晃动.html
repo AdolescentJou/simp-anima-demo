@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	.anima_entrance {
+		position: absolute;
+		z-index: 3;
+		top: 100px;
+		left: 100px;
+		width: 258px;
+		height: 382px;
+		animation: anima_entrance .6s ease-in-out both;
+	}
+
+	.anima_move {
+		width: 258px;
+		height: 382px;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 42px;
+		animation: anima_move 2s linear .6s infinite both;
+	}
+
+	.anima_sprite {
+		width: 258px;
+		height: 382px;
+		background: url('./assets/role.png');
+		background-repeat: no-repeat;
+		background-position: 0px 0px;
+		background-size: 516px 382px;
+		animation: anima_sprite 0.8s steps(2,end) .6s infinite both;
+	}
+
+	@keyframes anima_entrance {
+		0% {
+			transform: translate(500px, 0px);
+		}
+
+		100% {
+			transform: translate(0px, 0px);
+		}
+	}
+
+	@keyframes anima_sprite {
+
+		0%{
+			background-position: 0 0;
+		}
+
+		100% {
+			background-position: -488px 0px;
+		}
+	}
+
+	@keyframes anima_move {
+
+		0%,
+		16%,
+		42%,
+		74%,
+		100% {
+			transform: translate3d(0, 0, 0);
+		}
+
+		29% {
+			transform: translate3d(-1rem, 0, 0);
+		}
+
+		87% {
+			transform: translate3d(1rem, 0, 0);
+		}
+
+	}
+</style>
+
+<body>
+
+
+	<div class="anima_entrance">
+		<div class="anima_move">
+			<div class="anima_sprite"></div>
+		</div>
+	</div>
+
+
+</body>
+
+</html>
